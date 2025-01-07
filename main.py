@@ -6,8 +6,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.datasets import load_iris
 import pandas as pd
 
-
-print("Create and test a tree on the Iris dataset. /n")
+# First try it out the relatively simple Iris dataset
+print("Create and test a tree on the Iris dataset.\n")
 
 # Load the iris dataset
 iris = load_iris()
@@ -27,20 +27,22 @@ print(f"\nTraining Accuracy: {accuracy:.4f}")
 
 # Calculate test set accuracy
 accuracy = clf.accuracy(X_test, y_test)
-print(f"Accuracy on Test Data: {accuracy:.4f}")
+print(f"Accuracy on Test Data: {accuracy:.4f} \n")
 
 # Print the tree
 #print("Decision Tree Structure:")
 #clf.print_tree()
 
 
-print("Create and test a tree on the adult income dataset. /n")
+# Now try it with the much more complex adult income dataset
+print("Create and test a tree on the adult income dataset.\n")
 
 # Load the dataset
 url = "https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data"
 columns = ['age', 'workclass', 'fnlwgt', 'education', 'education-num', 'marital-status', 'occupation', 'relationship',
            'race', 'sex', 'capital-gain', 'capital-loss', 'hours-per-week', 'native-country', 'income']
 
+# Convert the data to Pandas
 data = pd.read_csv(url, names=columns, sep=r',\s*', engine='python')
 
 # Handle Missing Values
@@ -70,7 +72,7 @@ print(f"\nTraining Accuracy: {accuracy:.4f}")
 
 # Calculate test set accuracy
 accuracy = clf.accuracy(X_test, y_test)
-print(f"Accuracy on Test Data: {accuracy:.4f}")
+print(f"Accuracy on Test Data: {accuracy:.4f} \n")
 
 # Print the decision tree structure
 # clf.print_tree()
